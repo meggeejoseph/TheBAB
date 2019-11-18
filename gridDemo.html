@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="application/javascript">
+
+
+    function draw() {
+      var canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        drawGrid(canvas,false)
+        drawGrid(canvas,true)
+
+        for(let i=1; i<=10; i=i+1){
+        drawCircle(canvas,200,200,+10)
+      }
+    }
+
+
+    function drawCircle(canvas,x,y,r){
+      var ctx = canvas.getContext('2d');
+      ctx.beginPath();
+      ctx.arc(x,y,r,0,2*Math.PI,true)
+      ctx.stroke()
+    }
+
+    function drawShapes(canvas){
+        var ctx = canvas.getContext('2d');
+        ctx.strokeStyle = "rgb(255,0,0)"
+        drawCircle(ctx,100,200,50)
+    }
+
+
+
+    function drawGrid(canvas,major){
+      // if major is true this draws a thick grid every 100 pixels
+      // and labels the lines; otherwise it draws a light grid every
+      // 10 pixels
+      const ctx = canvas.getContext('2d');
+      ctx.font = "10pt Georgia"
+      linewidth = major?5:1
+      increment = major?100:10
+      if (major){
+        ctx.strokeStyle = "rgb(0,0,0)"
+      } else {
+        ctx.strokeStyle = "rgb(200,200,200)"
+      }
+      ctx.beginPath();
+      for(let x = 0; x<=canvas.width; x=x+increment){
+        ctx.moveTo(x,0)
+        ctx.lineTo(x,canvas.height)
+        if (major) {ctx.fillText("x="+x,x,20)}
+      }
+      ctx.stroke()
+      ctx.beginPath();
+      for(let y = 0; y<=canvas.height; y=y+increment){
+        ctx.moveTo(0,y)
+        ctx.lineTo(canvas.width,y)
+        if (major) {ctx.fillText("y="+y,0,y+10)}
+      }
+      ctx.stroke()
+    }
+
+
+  </script>
+ </head>
+ <body onload="draw();">
+   <h1>MKTYP6a javascript canvas for 11/11</h1>
+   <br>
+   <canvas id="canvas" width="500" height="500"></canvas>
+ </body>
+</html>
