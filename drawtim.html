@@ -54,7 +54,22 @@
     ctx.lineTo(230,155)
     ctx.lineTo(157,92)
   }
+  function drawStar(){
+    console.log("drawing allissa's star")
+    ctx.strokestyle="blue"
+    ctx.lineWidth=8
+    ctx.beginPath()
+    ctx.moveTo(97,301)
+    ctx.lineTo(200,99)
+    ctx.lineTo(300,292)
+    ctx.lineTo(93,167)
+    ctx.lineTo(295,165)
+    ctx.lineTo(109,292)
+    ctx.lineTo(98,294)
+    ctx.stroke()
 
+
+  }
   </script>
  </head>
  <body onload="init();">
@@ -83,7 +98,7 @@
      <button onclick="drawCircles()">draw circles</button>
       <button onclick="drawMe()">draw Me</button>
    </div>
-
+<button onclick="drawstar"()>DRAWSTAR</button>
    <script src="drawgrid.js"></script>
  </body>
 </html>
