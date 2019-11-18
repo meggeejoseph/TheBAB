@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title> demo1 </title>
+  </head>
+  <body>
+  <h1>Meggee's Calculator</h1>
+  Hours Spent Using Phone Per week: <input type="text" id="HoursTF"><br>
+  <button onClick="calcTimeinS()">
+    Calculate Seconds Spent Using Phone Per week
+  </button>
+  <br>
+  <label id="resultLabel">
+    You spent ????
+  </label>
+
+  <script>
+  function calcTimeinS(){
+    let Hours = HoursTF.value
+    let TimeinS = Hours*60*60
+    resultLabel.innerHTML =
+      "You spent "+ TimeinS + " Seconds!!"
+  }
+  </script>
+  </body>
+</html>
