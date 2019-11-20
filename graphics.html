@@ -8,23 +8,20 @@
       if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
 
-        ctx.fillStyle = 'rgb(200, 0, 0)';
-        ctx.fillRect(0, 0, 150, 150);
-
-        ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
-        ctx.fillRect(30, 30, 50, 50);
-
-        ctx.fillStyle = 'rgba(200, 0, 0)';
-        ctx.fillRect(277, 175, 25, 100);
+        ctx.fillStyle = 'rgb(255,238,210)';
+        ctx.fillRect(0, 0, 500, 500);
 
         ctx.fillStyle = 'rgb(200, 0, 0)';
-        ctx.fillRect(240,175, 100, 25);
+        ctx.fillRect(150, 150, 100, 25);
 
-        ctx.beginPath();
-        ctx.fillstyle + 'rgb (200,10,10)';
-        ctz.arc(200,300,150,0,2*Math.PI,true)
-        ctx.stroke()
-        
+        ctx.fillStyle = 'rgb(200, 0, 0)';
+        ctx.fillRect(200-12.5, 150, 25, 100);
+
+        ctx.fillStyle = 'rgba(0, 0, 200, 1)';
+        ctx.fillRect(370, 400, 120, 10);
+
+        ctx.fillStyle = 'rgba(0, 0, 200, 1)';
+        ctx.fillRect(425, 300, 10, 220);
 
         ctx.fillRect(25, 25, 100, 100);
         ctx.clearRect(45, 45, 60, 60);
@@ -34,7 +31,7 @@
   </script>
  </head>
  <body onload="draw();">
-   Meggee <br>
+   Demo1 <br>
    <canvas id="canvas" width="500" height="500"></canvas>
  </body>
 </html>

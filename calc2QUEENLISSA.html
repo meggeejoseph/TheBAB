@@ -3,25 +3,24 @@
   <title> demo1 </title>
 </head>
 <body>
-<h1>Car Depreciation Version 2</h1>
-enter your car's initial value: <input type="text" id="carvalue"><br>
+<h1>Vacation Trips 2</h1>
+enter your trip initial cost: <input type="text" id="carvalue"><br>
 enter number of days: <input type="text" id="days"><br>
-<button onClick="calcCarDepreciation()">
-  Car Depreciation
+<button onClick="calcTripCost()">
+  Vacation Trips!
 </button>
 <br>
 <label id="resultLabel">
-  You car depreciation value is ...
+  Your trip value is ...
 </label>
 
 <script>
-function calcCarDepreciation(){
+function calcTripCost(){
   let c1 = carvalue.value
   let d  = days.value
   let cd = Math.pow(1-.2, d/365)*c1
   resultLabel.innerHTML =
-    "Your car depreciation in days is " +cd
-
+    "Your trip cost is "+cd
 }
 </script>
 </body>
