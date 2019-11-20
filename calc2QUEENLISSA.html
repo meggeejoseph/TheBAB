@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title> demo1 </title>
+</head>
+<body>
+<h1>Vacation Trips 2</h1>
+enter your trip initial cost: <input type="text" id="carvalue"><br>
+enter number of days: <input type="text" id="days"><br>
+<button onClick="calcTripCost()">
+  Vacation Trips!
+</button>
+<br>
+<label id="resultLabel">
+  Your trip value is ...
+</label>
+
+<script>
+function calcTripCost(){
+  let c1 = carvalue.value
+  let d  = days.value
+  let cd = Math.pow(1-.2, d/365)*c1
+  resultLabel.innerHTML =
+    "Your trip cost is "+cd
+}
+</script>
+</body>
+</html>
