@@ -8,22 +8,17 @@
       if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
 
+
         ctx.fillStyle = 'rgb(200, 0, 0)';
         ctx.fillRect(10, 10, 50, 50);
 
-        ctx.fillStyle = 'rgba(0, 0, 200, 0.2)';
+        ctx.fillStyle = 'rgba(0, 200, 200)';
         ctx.fillRect(30, 30, 50, 50);
 
-        ctx.fillStyle = 'rgba(0, 0, 200, 0.9)';
-        ctx.fillRect(200, 150, 100, 20);
-
-        ctx.fillStyle = 'rgba(0, 0, 200, 0.9)';
-        ctx.fillRect(200, 170, 20, 90);
-
-        ctx.fillStyle = 'rgba(0, 0, 200, 0.9)';
-        ctx.fillRect(280, 170, 20, 90);
-
         ctx.fillRect(25, 25, 100, 100);
+        ctx.clearRect(45, 45, 60, 60);
+        ctx.strokeRect(50, 50, 50, 50);
+
         ctx.clearRect(45, 45, 60, 60);
         ctx.strokeRect(50, 50, 50, 50);
       }
@@ -31,8 +26,7 @@
   </script>
  </head>
  <body onload="draw();">
-   <h1> Zayquan's First Javascript Canvas </h1>
    Demo1 <br>
-   <canvas id="canvas" width="500" height="500"></canvas>
+   <canvas id="canvas" width="150" height="150"></canvas>
  </body>
 </html>

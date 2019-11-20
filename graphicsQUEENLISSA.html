@@ -4,35 +4,102 @@
   <meta charset="utf-8"/>
   <script type="application/javascript">
 
-    function draw() {
-      var canvas = document.getElementById('canvas');
-      if (canvas.getContext) {
-        var ctx = canvas.getContext('2d');
+  let canvas=null  // we give this a value in the init method
+  let ctx=null
 
-        ctx.fillStyle = 'rgb(200, 0, 0)';
-        ctx.fillRect(0, 0, 150, 150);
-
-        ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
-        ctx.fillRect(30, 30, 50, 50);
-
-        ctx.fillStyle = 'rgba(200, 0, 0)';
-        ctx.fillRect(277, 175, 25, 100);
-
-        ctx.fillStyle = 'rgb(200, 0, 0)';
-        ctx.fillRect(240,175, 100, 25);
+  function init(){
+    // initialize canvas and ctx after the page is loaded
+    canvas = document.getElementById('canvas')
+    ctx = canvas.getContext('2d')
+    drawBackground()
+  }
 
 
-        ctx.fillRect(25, 25, 100, 100);
-        ctx.clearRect(45, 45, 60, 60);
-        ctx.strokeRect(50, 50, 50, 50);
-      }
+  function drawCircle(x,y,r){
+    // draw a circle centered at (x,y) with radius r
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.stroke()
+  }
+
+  function drawCircles(){
+    let x = parseInt(xTF.value)
+    let y = parseInt(yTF.value)
+    let r = parseInt(rTF.value)
+    let n = parseInt(nTF.value)
+    let color = colorTF.value
+    for (let a = 0; a<n; a++){
+      drawCircle(x+10*a, y-10*a, 10+r*a)
     }
+  }
+
+
+  function drawOneCircle(){
+    let x = parseInt(xTF.value)
+    let y = parseInt(yTF.value)
+    let r = parseInt(rTF.value)
+    let color = colorTF.value
+    ctx.fillStyle=color
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.fill()
+  }
+  function drawMe(){
+    ctx.lineTo(152,98)
+    ctx.lineTo(70,298)
+    ctx.lineTo(462,295)
+    ctx.lineTo(364,97)
+    ctx.lineTo(308,172)
+    ctx.lineTo(273,111)
+    ctx.lineTo(230,155)
+    ctx.lineTo(157,92)
+  }
+  function drawStar(){
+    console.log("drawing allissa's star")
+    ctx.strokestyle="blue"
+    ctx.lineWidth=8
+    ctx.beginPath()
+    ctx.moveTo(97,301)
+    ctx.lineTo(200,99)
+    ctx.lineTo(300,292)
+    ctx.lineTo(93,167)
+    ctx.lineTo(295,165)
+    ctx.lineTo(109,292)
+    ctx.lineTo(98,294)
+    ctx.stroke()
+    ctx.lineWidth=1
+
+
+  }
   </script>
  </head>
- <button class="btn btn-lg btn-danger" onClick="draw()">
-    draw me
- </button>
- <body >
-   QUEENLISSA <br>
-   <canvas id="canvas" width="500" height="500"></canvas>
+ <body onload="init();">
+   <h1>drawTim interactive javascript canvas for 11/13</h1>
+   <br>
+
+   <button style="background:red; color:white"
+           onclick="drawBackground()">Clear</button>
+
+   <canvas style="float:left;margin-right:30px" id="canvas" width="500" height="500"></canvas>
+   <br>
+
+   <div>
+     x <input type="text" id="xTF" value="100"><br>
+     y <input type="text" id="yTF" value="200"><br>
+     r <input type="text" id="rTF" value="10"><br>
+     c <input type="text" id="colorTF" value="#ffaa55"><br>
+     <button onclick="drawOneCircle()">draw a circle</button>
+     <br>
+
+</div>
+
+
+
+     n <input type="text" id="nTF" value="10"><br>
+     <button onclick="drawCircles()">draw circles</button>
+      <button onclick="drawMe()">draw Me</button>
+   </div>
+<button onclick="drawStar()">DRAWSTAR</button>
+   <script src="drawgrid.js"></script>
  </body>
+</html>
