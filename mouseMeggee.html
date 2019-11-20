@@ -1,27 +1,27 @@
 !DOCTYPE html
 <html>
-function init(){
+<function init(){
     // initialize canvas and ctx after the page is loaded
     canvas = document.getElementById('canvas')
     ctx = canvas.getContext('2d')
     drawBackground()
     canvas.addEventListener('click',mouseClick,false)
     canvas.addEventListener('mousemove',mouseMove,false)
-  }
-   function mouseClick(event){
+  }>
+   <function mouseClick(event){
     console.dir(event)
     const x = event.offsetX
     const y = event.offsetY
     //draw something here ...
     ctx.fillRect(x,y,20,50)
-  }
-  function mouseMove(event){
+  }>
+  <function mouseMove(event){
     const x = event.offsetX
     const y = event.offsetY
     // put your own code in here!
     if (event.buttons==1){ // only draw if they are pushing the button!
         ctx.fillRect(x,y,10,20)
     }
-}
+}>
 
 </html>
