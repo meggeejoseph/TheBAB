@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="application/javascript">
+
+  let canvas=null  // we give this a value in the init method
+  let ctx=null
+
+  function init(){
+    // initialize canvas and ctx after the page is loaded
+    canvas = document.getElementById('canvas')
+    ctx = canvas.getContext('2d')
+    drawBackground()
+    canvas.addEventListener('click',mouseClick,false)
+    canvas.addEventListener('mousemove',mouseMove,false)
+  }
+
+  function mouseClick(event){
+    console.dir(event)
+    x = event.offsetX
+    y = event.offsetY
+    //
+    drawObject(x,y)
+  }
+
+  function mouseMove(event){
+    //console.log(event.buttons)
+    ctx.fillStyle="rgba(0,0,255,0.3)"
+    const x = event.offsetX
+    const y = event.offsetY
+    if (event.buttons==1){  // see if the mouse button is pressed
+      ctx.fillRect(x,y,10,30)
+    }
+  }
+
+  function drawObject(x,y){
+    // put in your own code to draw something interesting
+    // at starting here ...
+    drawCircle(x,y,10)
+  }
+
+
+  function drawCircle(x,y,r){
+    // draw a circle centered at (x,y) with radius r
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.stroke()
+  }
+
+  function fillCircle(x,y,r){
+    // draw a circle centered at (x,y) with radius r
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.fill()
+  }
+
+  </script>
+ </head>
+ <body onload="init();">
+   <h1>MouseDemo interactive javascript canvas for 11/20</h1>
+   <br>
+
+   <button onclick="drawBackground()">Clear</button>
+   <button onclick="drawTim(200,200)">Draw</button>
+
+   <canvas style="float:left;margin-right:30px"
+           id="canvas" width="500" height="500">
+   </canvas>
+
+   <script src="drawgrid.js"></script>
+ </body>
+</html>
