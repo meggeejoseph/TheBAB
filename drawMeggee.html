@@ -44,7 +44,24 @@
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
   }
-
+function drawMeggee(){
+  console.log("drawing Meggee")
+  ctx.strokestyle="rgb(255,255,0)"
+  ctx.lineWidth=8
+  ctx.beginPath()
+  ctx.lineTo(98,98)
+  ctx.lineTo(100,401)
+  ctx.lineTo(198,401)
+  ctx.lineTo(200,251)
+  ctx.lineTo(300,402)
+  ctx.lineTo(399,401)
+  ctx.lineTo(400,101)
+  ctx.lineTo(301,101)
+  ctx.lineTo(300,253)
+  ctx.lineTo(201,102)
+  ctx.lineTo(100,102)
+  ctx.stroke()
+}
   </script>
  </head>
  <body onload="init();">
@@ -66,7 +83,7 @@
      <br>
 
      n <input type="text" id="nTF" value="10"><br>
-     <button onclick="drawCircles()">draw circles</button>
+     <button onclick="drawMeggee()">draw Meggee</button>
    </div>
 
    <script src="drawgrid.js"></script>
