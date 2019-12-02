@@ -27,11 +27,18 @@
 
   function mouseMove(event){
     //console.log(event.buttons)
-    ctx.fillStyle="rgba(0,0,255,0.3)"
+    ctx.fillStyle="rgba(255,0,255,0.3)"
     const x = event.offsetX
     const y = event.offsetY
     if (event.buttons==1){  // see if the mouse button is pressed
-      ctx.fillRect(x,y,10,30)
+
+      drawCircle(x,y,50)
+      ctx.fill()
+      drawCircle(x-30,y,10)
+      ctx.fill()
+      drawCircle(x+30,y,10)
+      ctx.fillRect(x,y+20,2,2)
+
     }
   }
 
@@ -68,7 +75,7 @@
     ctx.stroke()
   }
 
-  function fillCircle(x,y,r){
+    function fillCircle(x,y,r){
     // draw a circle centered at (x,y) with radius r
     ctx.beginPath();
     ctx.arc(x,y,r,0,2*Math.PI,true)
@@ -85,7 +92,7 @@
    <button onclick="drawTim(200,200)">Draw</button>
 
    <canvas style="float:left;margin-right:30px"
-           id="canvas" width="500" height="500">
+           id="canvas" width="1000" height="1000">
    </canvas>
 
    <script src="drawgrid.js"></script>
