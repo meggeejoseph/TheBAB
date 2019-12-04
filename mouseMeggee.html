@@ -21,7 +21,7 @@
     x = event.offsetX
     y = event.offsetY
     //
-    drawObject(x,y)
+    drawMeggee(x,y)
   }
 
   function mouseMove(event){
@@ -30,29 +30,77 @@
     const x = event.offsetX
     const y = event.offsetY
     if (event.buttons==1){  // see if the mouse button is pressed
-      ctx.fillRect(x,y,10,30)
+    ctx.fillRect(x,y,10,30)
+
+    ctx.lineTo(115,103)
+    ctx.lineTo(87,109)
+    ctx.lineTo(90,129)
+    ctx.lineTo(107,138)
+    ctx.lineTo(109,154)
+    ctx.lineTo(87,159)
+    ctx.lineTo(79,151)
+    ctx.lineTo(113,155)
+    ctx.lineTo(133,156)
+    ctx.lineTo(129,147)
+    ctx.lineTo(127,115)
+    ctx.lineTo(146,113)
+    ctx.lineTo(156,118)
+    ctx.lineTo(156,132)
+    ctx.lineTo(150,149)
+    ctx.lineTo(131,155)
+    ctx.lineTo(149,155)
+    ctx.lineTo(150,156)
+    ctx.lineTo(169,155)
+    ctx.lineTo(184,154)
+    ctx.lineTo(192,141)
+    ctx.lineTo(190,133)
+    ctx.lineTo(175,131)
+    ctx.lineTo(175,116)
+    ctx.lineTo(183,105)
+    ctx.lineTo(198,111)
+    ctx.lineTo(200,113)
+    ctx.lineTo(202,114)
+    ctx.lineTo(203,114)
+    ctx.lineTo(217,113)
+    ctx.lineTo(225,139)
+    ctx.lineTo(228,146)
+    ctx.lineTo(222,133)
+    ctx.lineTo(210,133)
+    ctx.lineTo(215,114)
+    ctx.lineTo(204,145)
+    ctx.lineTo(203,151)
+
     }
   }
 
-  function drawObject(x,y){
-    // put in your own code to draw something interesting
-    // at starting here ...
-    drawCircle(x,y,10)
-  }
+  function drawMeggee(x,y){
+  ctx.strokeStyle="red"
+  ctx.lineWidth=5
+  ctx.beginPath()
 
+    ctx.moveTo(179+x-200,-100+y+129)
+    ctx.lineTo(154+x-200,-100+y+98)
+    ctx.lineTo(113+x-200,-100+y+99)
+    ctx.lineTo(112+x-200,-100+y+131)
+    ctx.lineTo(114+x-200,-100+y+172)
+    ctx.lineTo(160+x-200,-100+y+187)
+    ctx.lineTo(174+x-200,-100+y+217)
+    ctx.lineTo(173+x-200,-100+y+263)
+    ctx.lineTo(135+x-200,-100+y+267)
+    ctx.lineTo(98+x-200,-100+y+234)
+    ctx.lineTo(104+x-200,-100+y+231)
+    ctx.lineTo(142+x-200,-100+y+231)
+    ctx.lineTo(156+x-200,-100+y+231)
+    ctx.lineTo(174+x-200,-100+y+231)
+    ctx.lineTo(194+x-200,-100+y+231)
+    ctx.lineTo(201+x-200,-100+y+231)
+    ctx.lineTo(209+x-200,-100+y+230)
+    ctx.lineTo(218+x-200,-100+y+102)
+    ctx.lineTo(267+x-200,-100+y+159)
+    ctx.lineTo(296+x-200,-100+y+103)
+    ctx.lineTo(317+x-200,-100+y+221)
+  ctx.stroke()
 
-  function drawCircle(x,y,r){
-    // draw a circle centered at (x,y) with radius r
-    ctx.beginPath();
-    ctx.arc(x,y,r,0,2*Math.PI,true)
-    ctx.stroke()
-  }
-
-  function fillCircle(x,y,r){
-    // draw a circle centered at (x,y) with radius r
-    ctx.beginPath();
-    ctx.arc(x,y,r,0,2*Math.PI,true)
-    ctx.fill()
   }
 
   </script>
@@ -62,7 +110,7 @@
    <br>
 
    <button onclick="drawBackground()">Clear</button>
-   <button onclick="drawTim(200,200)">Draw</button>
+   <button onclick="drawMeggee(200,200)">Draw</button>
 
    <canvas style="float:left;margin-right:30px"
            id="canvas" width="500" height="500">
