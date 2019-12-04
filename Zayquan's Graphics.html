@@ -44,16 +44,10 @@
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
   }
-  function drawZayquan(){
-    ctx.lineTo(250,100)
-  ctx.lineTo(101,301)
-  ctx.lineTo(301,301)
-  ctx.lineTo(398,299)
-  ctx.lineTo(255,99)
-  ctx.lineTo(253,97)
-  }
+
+
   function drawStar(){
-    console.log("drawing allissa's star")
+    console.log("drawing Zayquan's star")
     ctx.strokestyle="blue"
     ctx.lineWidth=8
     ctx.beginPath()
@@ -65,8 +59,6 @@
     ctx.lineTo(109,292)
     ctx.lineTo(98,294)
     ctx.stroke()
-
-
   }
   </script>
  </head>
@@ -96,7 +88,7 @@
      <button onclick="drawCircles()">draw circles</button>
       <button onclick="drawMe()">draw Me</button>
    </div>
-<button onclick="drawstar"()>DRAWSTAR</button>
+<button onclick="drawStar()">DRAWSTAR</button>
    <script src="drawgrid.js"></script>
  </body>
 </html>
