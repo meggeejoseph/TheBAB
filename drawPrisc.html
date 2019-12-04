@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="application/javascript">
+
+  let canvas=null  // we give this a value in the init method
+  let ctx=null
+
+function drawPrisc(){
+    ctx.strokeStyle="blue"
+    console.log("drawing allissa's star")
+    ctx.lineWidth=5
+    ctx.beginPath()
+ctx.lineTo(98,101)
+ctx.lineTo(398,99)
+ctx.lineTo(400,201)
+ctx.lineTo(302,200)
+ctx.lineTo(300,400)
+ctx.lineTo(199,400)
+ctx.lineTo(200,200)
+ctx.lineTo(100,198)
+ctx.lineTo(99,103)
+ctx.lineTo(199,200)
+ctx.lineTo(301,103)
+ctx.lineTo(401,204)
+ctx.lineTo(302,200)
+ctx.lineTo(198,300)
+ctx.lineTo(300,400)
+ctx.stroke()
+}
+
+
+  </script>
+ </head>
+ <body onload="init();">
+   <h1>Drawpris Interactive Java
+     Script Canvas</h1>
+   <br>
+
+   <button style="background:red; color:white"
+           onclick="drawBackground()">Clear</button>
+
+   <canvas style="float:left;margin-right:30px" id="canvas" width="500" height="500"></canvas>
+   <br>
+
+   <div>
+     x <input type="text" id="xTF" value="100"><br>
+     y <input type="text" id="yTF" value="200"><br>
+     r <input type="text" id="rTF" value="10"><br>
+     c <input type="text" id="colorTF" value="#33FFFC"><br>
+     <button onclick="drawOneCircle()">draw a circle</button>
+     <br>
+
+     t <input type="text" id="tTF" value="10"><br>
+     <button onclick="drawPrisc()">draw pris</button>
+   </div>
+
+   <script src="drawgrid.js"></script>
+ </body>
+</html>
