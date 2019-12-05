@@ -7,9 +7,44 @@
   let canvas=null  // we give this a value in the init method
   let ctx=null
 
+  function init(){
+    // initialize canvas and ctx after the page is loaded
+    canvas = document.getElementById('canvas')
+    ctx = canvas.getContext('2d')
+    drawBackground()
+  }
+
+  function drawCircle(x,y,r){
+    // draw a circle centered at (x,y) with radius r
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.stroke()
+  }
+
+  function drawCircles(){
+    let x = parseInt(xTF.value)
+    let y = parseInt(yTF.value)
+    let r = parseInt(rTF.value)
+    let n = parseInt(nTF.value)
+    let color = colorTF.value
+    for (let a = 0; a<n; a++){
+      drawCircle(x+10*a, y-10*a, 10+r*a)
+    }
+  }
+
+    function drawOneCircle(){
+      let x = parseInt(xTF.value)
+      let y = parseInt(yTF.value)
+      let r = parseInt(rTF.value)
+      let color = colorTF.value
+      ctx.fillStyle=color
+      ctx.beginPath();
+      ctx.arc(x,y,r,0,2*Math.PI,true)
+      ctx.fill()
+    }
+
 function drawPrisc(){
     ctx.strokeStyle="blue"
-    console.log("drawing allissa's star")
     ctx.lineWidth=5
     ctx.beginPath()
 ctx.lineTo(98,101)
@@ -33,7 +68,7 @@ ctx.stroke()
 
   </script>
  </head>
- <body onload="init();">
+<body onload="init();">
    <h1>Drawpris Interactive Java
      Script Canvas</h1>
    <br>
