@@ -95,15 +95,14 @@ Introduction:
                   <li> Camp Wanakee! </li>
                   <li> Lazer Tag! </li>
               </ul>
-            </div>
 
-          <body onload="init();">
-           <div class="container">
-             <div class="jumbotron">
-               <h1> Wait There's More! </h1>
-               <p> Keep scrolling through this demo! </p>
-             </div>
-             <html>
+            </div>
+            <!DOCTYPE html>
+            <html>
+            <body style="background-color:powderblue;">
+
+            </body>
+            </html>
 
              <html>
               <head>
@@ -116,13 +115,13 @@ Introduction:
                <script type="application/javascript">
 
 
-               function calcBMI(){
-                 w = weight.value  // read weight from element with id="weight"
-                 h = height.value  // read height from element with id="height"
-                 bmi = 703*w/(h*h)  // calculate the Body Mass Index
-                 BMI.innerHTML =    // write into label element with id "BMI"
-                     "You're BMI is "
-                     +bmi.toFixed(1)  // round BMI to 1 decimal place
+               function calcMTC(){
+                 m = cost.value  // read weight from element with id="weight"
+                 p = people.value  // read height from element with id="height"
+                 mtc = m*p  // calculate the Body Mass Index
+                 MTC.innerHTML =    // write into label element with id "BMI"
+                     "The MKTYP trip cost is "
+                     +mtc.toFixed(1)  // round BMI to 1 decimal place
 
 
                }
@@ -152,6 +151,7 @@ Introduction:
                  // put your own code in here!
                  if (event.buttons==1){ // only draw if they are pushing the button!
                      ctx.fillRect(x,y,10,20)
+                     drawQUEEN(x,y)
                  }
              }
 
@@ -184,61 +184,87 @@ Introduction:
                  ctx.arc(x,y,r,0,2*Math.PI,true)
                  ctx.fill()
                }
-               function drawTim(){
-                 ctx.strokeStyle="blue"
+               function drawQUEEN(x,y){
+                 ctx.strokeStyle="hotpink"
                  ctx.lineWidth=5
                  ctx.beginPath()
-                 ctx.moveTo(198,100)
-                 ctx.lineTo(300,100)
-                 ctx.lineTo(362,150)
-                 ctx.lineTo(364,213)
-                 ctx.lineTo(308,263)
-                 ctx.lineTo(199,263)
-                 ctx.lineTo(136,211)
-                 ctx.lineTo(142,141)
-                 ctx.lineTo(195,102)
+                 ctx.moveTo(131-200+x,y-200+230)
+                 ctx.lineTo(217-200+x,y-200+367)
+                 ctx.lineTo(424-200+x,y-200+255)
+                 ctx.lineTo(354-200+x,y-200+127)
+                 ctx.lineTo(313-200+x,y-200+219)
+                 ctx.lineTo(265-200+x,y-200+204)
+                 ctx.lineTo(257-200+x,y-200+247)
+                 ctx.lineTo(133-200+x,y-200+227)
                  ctx.stroke()
                }
 
-               </script>
-              </head>
-              <body onload="init();">
-                <div class="container">
-                  <div class="jumbotron">
-                    <h1>Tim's Final Project .... </h1>
-                    <p>This is a minimal demo </p>
-                  </div>
+             </script>
+  </head>
+  <body onload="init();">
+    <div class="container">
+      <div class="jumbotron">
+        <h1> Wait THERE MORE! .... </h1>
+        <p> Keep scrolling! </p>
+      </div>
+
+
 
                 <div class="row">
                   <div class="col">
-                    <h1>Calculations</h1>
-                    Put some textfields, labels, and buttons here ..
-                    <h1>Body Mass Index</h1>
-                    What is your full name? <input type="text" id="fullName"><br>
-                    Enter your weight in pounds <input type="number" id="weight"><br>
-                    Enter your height in inches <input type="number" id="height"><br>
-                    <button class="btn btn-lg btn-danger"
-                            onClick="calcBMI()">
-                        Calculate BMI
-                    </button>
-                    <br>
-                    <hr>
-                    <h2>Results</h2>
-                    <label id="BMI">????</label>
 
-                  </div>
+                      <h1>Calculations</h1>
+                      <p> Throughout this course we learned how to make our own calculations in HTML format </p>
+
+                      <form action="/action_page.php">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male" value="male"><br>
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="female" value="female"><br>
+                    <label for="other">Other</label>
+                    <input type="radio" name="gender" id="other" value="other"><br><br>
+                      First name: <input type="text" name="fname"><br>
+                      Last name: <input type="text" name="lname"><br>
+                      Birthday: <input type="date" name="bday">
+                      E-mail: <input type="email" name="emailaddress">
+                    <input type="submit" value="Submit">
+                    </form>
+
+                      <h1>MKTYP Trip Cost</h1>
+                      MKTYP Trip Cost <input type="text" id="cost"><br>
+                      Enter number of people <input type="number" id="people"><br>
+
+
+                      <button class="btn btn-lg btn-primary"
+                              onClick="calcMTC()">
+                              Calculate MTC
+                          </button>
+                          <br>
+                          <hr>
+                          <h2>Results</h2>
+                          <label id="MTC">????</label>
+
+
+                        </div>
+
+
+
+
+
                   <div class="col">
                     <h1>Canvas</h1>
+                      <p5> This had to be one of the hardest things we've learned this semester! But here's a tip, the more you do it. The better you get! </p5>
                     <canvas style="float:left;margin-right:30px" id="canvas" width="500" height="500"></canvas>
 
 
+
                   </div>
                   <div class="col">
-                    <h1>Buttons etc to draw on Canvas</h1>
-                    <button style="background:red; color:white"
+                    <h1> Buttons to draw on Canvas! </h1>
+                    <button style="background:hotpink; color:white"
                             onclick="drawBackground()">Clear</button>
 
-                    <br> <button onclick="drawTim()">Draw Tim</button>
+                    <br> <button onclick="drawQUEEN(200,200)">Draw QUEEN</button>
                     ....
                   </div>
 
