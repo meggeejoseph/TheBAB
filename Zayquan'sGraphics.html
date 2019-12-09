@@ -44,28 +44,26 @@
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
   }
-function drawMeggee(){
-  console.log("drawing Meggee")
-  ctx.strokestyle="rgb(255,255,0)"
-  ctx.lineWidth=8
-  ctx.beginPath()
-  ctx.lineTo(98,98)
-  ctx.lineTo(100,401)
-  ctx.lineTo(198,401)
-  ctx.lineTo(200,251)
-  ctx.lineTo(300,402)
-  ctx.lineTo(399,401)
-  ctx.lineTo(400,101)
-  ctx.lineTo(301,101)
-  ctx.lineTo(300,253)
-  ctx.lineTo(201,102)
-  ctx.lineTo(100,102)
-  ctx.stroke()
-}
+
+
+  function drawStar(){
+    console.log("drawing Zayquan's star")
+    ctx.strokestyle="blue"
+    ctx.lineWidth=8
+    ctx.beginPath()
+    ctx.moveTo(97,301)
+    ctx.lineTo(200,99)
+    ctx.lineTo(300,292)
+    ctx.lineTo(93,167)
+    ctx.lineTo(295,165)
+    ctx.lineTo(109,292)
+    ctx.lineTo(98,294)
+    ctx.stroke()
+  }
   </script>
  </head>
  <body onload="init();">
-   <h1>drawMegggee interactive javascript canvas for 11/13</h1>
+   <h1>drawTim interactive javascript canvas for 11/13</h1>
    <br>
 
    <button style="background:red; color:white"
@@ -82,10 +80,15 @@ function drawMeggee(){
      <button onclick="drawOneCircle()">draw a circle</button>
      <br>
 
-     n <input type="text" id="nTF" value="10"><br>
-     <button onclick="drawMeggee()">draw Meggee</button>
-   </div>
+</div>
 
+
+
+     n <input type="text" id="nTF" value="10"><br>
+     <button onclick="drawCircles()">draw circles</button>
+      <button onclick="drawMe()">draw Me</button>
+   </div>
+<button onclick="drawStar()">DRAWSTAR</button>
    <script src="drawgrid.js"></script>
  </body>
 </html>
