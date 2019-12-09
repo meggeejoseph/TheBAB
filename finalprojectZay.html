@@ -10,15 +10,12 @@
   <script type="application/javascript">
 
 
-  function calcBMI(){
-    w = weight.value  // read weight from element with id="weight"
-    h = height.value  // read height from element with id="height"
-    bmi = 703*w/(h*h)  // calculate the Body Mass Index
-    BMI.innerHTML =    // write into label element with id "BMI"
-        "You're BMI is "
-        +bmi.toFixed(1)  // round BMI to 1 decimal place
-
-
+  function calcInches(){
+    f = feet.value  // read feet from element with id="feet"
+    inches = 12*f  // calculate inches
+    Inches.innerHTML =    // write into label element with id "Inches"
+        "Your Height In Inches is "
+        +inches.toFixed(1)  // round inches to 1 decimal place
   }
   let canvas=null  // we give this a value in the init method
   let ctx=null
@@ -45,7 +42,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
     const y = event.offsetY
     // put your own code in here!
     if (event.buttons==1){ // only draw if they are pushing the button!
-        ctx.fillRect(x,y,10,20)
+        drawZay(x,y)
     }
 }
 
@@ -96,31 +93,47 @@ canvas.addEventListener('mousemove',mouseMove,false)
     ctx.stroke()
   }
 
+  function drawZay(x,y){
+    ctx.strokeStyle="rgba(0,0,255,0.1)"
+    ctx.lineWidth=5
+    ctx.beginPath()
+    ctx.moveTo(96-100+x,y-200+399)
+    ctx.lineTo(195-100+x,y-200+398)
+    ctx.lineTo(398-100+x,y-200+401)
+    ctx.lineTo(400-100+x,y-200+198)
+    ctx.lineTo(299-100+x,y-200+299)
+    ctx.lineTo(199-100+x,y-200+199)
+    ctx.lineTo(102-100+x,y-200+295)
+    ctx.lineTo(36-100+x,y-200+203)
+    ctx.lineTo(44-100+x,y-200+396)
+    ctx.lineTo(43-100+x,y-200+399)
+    ctx.lineTo(91-100+x,y-200+396)
+    ctx.stroke()
+  }
+
   </script>
  </head>
  <body onload="init();">
    <div class="container">
      <div class="jumbotron">
-       <h1>Tim's Final Project .... </h1>
+       <h1>Zayquan's Final Project </h1>
        <p>This is a minimal demo </p>
      </div>
 
    <div class="row">
      <div class="col">
-       <h1>Calculations</h1>
-       Put some textfields, labels, and buttons here ..
-       <h1>Body Mass Index</h1>
-       What is your full name? <input type="text" id="fullName"><br>
-       Enter your weight in pounds <input type="number" id="weight"><br>
-       Enter your height in inches <input type="number" id="height"><br>
-       <button class="btn btn-lg btn-danger"
-               onClick="calcBMI()">
-           Calculate BMI
-       </button>
-       <br>
-       <hr>
-       <h2>Results</h2>
-       <label id="BMI">????</label>
+       <body class="container">
+           <h1>Feet in Inches Index</h1>
+           What is your full name? <input type="text" id="fullName"><br>
+           Enter the amount of feet <input type="number" id="feet"><br>
+           <button class="btn btn-lg btn-danger" onClick="calcInches()">
+               Calculate Inches
+           </button>
+           <br>
+           <hr>
+           <h2>Results</h2>
+           <label id="Inches">????</label>
+
 
      </div>
      <div class="col">
@@ -134,7 +147,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
        <button style="background:red; color:white"
                onclick="drawBackground()">Clear</button>
 
-       <br> <button onclick="drawTim()">Draw Tim</button>
+       <br> <button onclick="drawTim()">Draw Zay</button>
        ....
      </div>
 
