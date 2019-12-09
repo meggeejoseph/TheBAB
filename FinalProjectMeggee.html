@@ -38,6 +38,7 @@
     m = mass.value  // read mass from element with id="mass"
     v = velocity.value  // read velocity from element with id="velocity"
     momentum = (m*v)  // calculate the momentum Index
+    console.log(momentum)
     momentum.innerHTML =    // write into label element with id "momentum"
         "The momentum is "
         +momentum.toFixed(1)  // round momentum to 1 decimal place
@@ -60,7 +61,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
     console.dir(event)
     const x = event.offsetX
     const y = event.offsetY
-    ctx.moveto(90,50)
+    ctx.moveTo(90,50)
     ctx.lineTo(96,141)
     ctx.lineTo(101,162)
     ctx.lineTo(112,170)
