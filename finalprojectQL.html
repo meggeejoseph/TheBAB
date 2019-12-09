@@ -36,6 +36,52 @@
 <hr>
 <hr>
 
+   <div class="row">
+     <div class="col">
+       <h3> Select Gender: </h3>
+       <form action="/action_page.php">
+   <label for="male">Male</label>
+   <input type="radio" name="gender" id="male" value="male"><br>
+   <label for="female">Female</label>
+   <input type="radio" name="gender" id="female" value="female"><br>
+   <label for="other">Other</label>
+   <input type="radio" name="gender" id="other" value="other"><br><br>
+   <input type="submit" value="Submit">
+ </form>
+
+       <h1>Body Mass Index</h1>
+       What is your full name? <input type="text" id="fullName"><br>
+       Enter your weight in pounds <input type="number" id="weight"><br>
+       Enter your height in inches <input type="number" id="height"><br>
+       <button class="btn btn-lg btn-primary"
+               onClick="calcBMI()">
+           Calculate BMI
+
+       </button>
+       <br>
+       <hr>
+       <h2>Results</h2>
+       <label id="BMI">????</label>
+
+     </div>
+ <div class="col">
+   <h1>Canvas</h1>
+   <canvas style="float:left;margin-right:30px" id="canvas" width="500" height="500"></canvas>
+
+
+
+
+          </div>
+          <div class="col">
+            <h1>Buttons etc to draw on Canvas</h1>
+            <button style="background:hotpink; color:white"
+                    onclick="drawBackground()">Clear</button>
+               <br> <button onclick="drawTim()">Draw QUEEN</button>
+
+         }
+       }
+          </div>
+
     <div class= "row">
 
          <div class="col-md bg-primary">
@@ -209,49 +255,6 @@ canvas.addEventListener('mousemove',mouseMove,false)
      </html>
 
 
-   <div class="row">
-     <div class="col">
-       <h3> Select Gender: </h3>
-       <form action="/action_page.php">
-   <label for="male">Male</label>
-   <input type="radio" name="gender" id="male" value="male"><br>
-   <label for="female">Female</label>
-   <input type="radio" name="gender" id="female" value="female"><br>
-   <label for="other">Other</label>
-   <input type="radio" name="gender" id="other" value="other"><br><br>
-   <input type="submit" value="Submit">
- </form>
-
-       <h1>Body Mass Index</h1>
-       What is your full name? <input type="text" id="fullName"><br>
-       Enter your weight in pounds <input type="number" id="weight"><br>
-       Enter your height in inches <input type="number" id="height"><br>
-       <button class="btn btn-lg btn-primary"
-               onClick="calcBMI()">
-           Calculate BMI
-
-       </button>
-       <br>
-       <hr>
-       <h2>Results</h2>
-       <label id="BMI">????</label>
-
-     </div>
- <div class="col">
-   <h1>Canvas</h1>
-   <canvas style="float:left;margin-right:30px" id="canvas" width="500" height="500"></canvas>
-
-
-
-
-          </div>
-          <div class="col">
-            <h1>Buttons etc to draw on Canvas</h1>
-            <button style="background:hotpink; color:white"
-                    onclick="drawBackground()">Clear</button>
-               <br> <button onclick="drawTim()">Draw QUEEN</button>
-           ....
-          </div>
 
 
 
