@@ -115,13 +115,13 @@ Introduction:
                <script type="application/javascript">
 
 
-               function calcBMI(){
-                 w = weight.value  // read weight from element with id="weight"
-                 h = height.value  // read height from element with id="height"
-                 bmi = 703*w/(h*h)  // calculate the Body Mass Index
-                 BMI.innerHTML =    // write into label element with id "BMI"
-                     "You're BMI is "
-                     +bmi.toFixed(1)  // round BMI to 1 decimal place
+               function calcMTC(){
+                 m = cost.value  // read weight from element with id="weight"
+                 p = people.value  // read height from element with id="height"
+                 mtc = m*p  // calculate the Body Mass Index
+                 MTC.innerHTML =    // write into label element with id "BMI"
+                     "The MKTYP trip cost is "
+                     +mtc.toFixed(1)  // round BMI to 1 decimal place
 
 
                }
@@ -228,21 +228,21 @@ Introduction:
                       Birthday: <input type="date" name="bday">
                       E-mail: <input type="email" name="emailaddress">
                     <input type="submit" value="Submit">
-                    </form>      
+                    </form>
 
-                      <h1>Body Mass Index</h1>
-                      What is your full name? <input type="text" id="fullName"><br>
-                      Enter your weight in pounds <input type="number" id="weight"><br>
-                      Enter your height in inches <input type="number" id="height"><br>
+                      <h1>MKTYP Trip Cost</h1>
+                      MKTYP Trip Cost <input type="text" id="cost"><br>
+                      Enter number of people <input type="number" id="people"><br>
+
 
                       <button class="btn btn-lg btn-primary"
-                              onClick="calcBMI()">
-                              Calculate BMI
+                              onClick="calcMTC()">
+                              Calculate MTC
                           </button>
                           <br>
                           <hr>
                           <h2>Results</h2>
-                          <label id="BMI">????</label>
+                          <label id="MTC">????</label>
 
 
                         </div>
