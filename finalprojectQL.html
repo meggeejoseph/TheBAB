@@ -151,6 +151,7 @@ Introduction:
                  // put your own code in here!
                  if (event.buttons==1){ // only draw if they are pushing the button!
                      ctx.fillRect(x,y,10,20)
+                     drawQUEEN(x,y)
                  }
              }
 
@@ -183,18 +184,18 @@ Introduction:
                  ctx.arc(x,y,r,0,2*Math.PI,true)
                  ctx.fill()
                }
-               function drawQUEEN(){
+               function drawQUEEN(x,y){
                  ctx.strokeStyle="hotpink"
                  ctx.lineWidth=5
                  ctx.beginPath()
-                 ctx.moveTo(131,230)
-                 ctx.lineTo(217,367)
-                 ctx.lineTo(424,255)
-                 ctx.lineTo(354,127)
-                 ctx.lineTo(313,219)
-                 ctx.lineTo(265,204)
-                 ctx.lineTo(257,247)
-                 ctx.lineTo(133,227)
+                 ctx.moveTo(131-200+x,y-200+230)
+                 ctx.lineTo(217-200+x,y-200+367)
+                 ctx.lineTo(424-200+x,y-200+255)
+                 ctx.lineTo(354-200+x,y-200+127)
+                 ctx.lineTo(313-200+x,y-200+219)
+                 ctx.lineTo(265-200+x,y-200+204)
+                 ctx.lineTo(257-200+x,y-200+247)
+                 ctx.lineTo(133-200+x,y-200+227)
                  ctx.stroke()
                }
 
@@ -263,10 +264,9 @@ Introduction:
                     <button style="background:hotpink; color:white"
                             onclick="drawBackground()">Clear</button>
 
-                    <br> <button onclick="drawQUEEN()">Draw QUEEN</button>
+                    <br> <button onclick="drawQUEEN(200,200)">Draw QUEEN</button>
                     ....
                   </div>
-
 
 
 
