@@ -1,8 +1,32 @@
-TYPE html>
 <html>
  <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Meggee's Final Project</title>
+  </head>
+  <body class="container">
+
+  <div class="jumbotron"
+       class= "col light pink" >
+
+     <h1> Welcome to Meggee's Final </h1>
+     <p>
+       Overall, this semester has been fruitful. I used to use a website builder to build websites, but now I know how to do so from scratch using html and javascript.
+     </p>
+  </div>
+  <body class="container">
+
+  <div class="row">
+    <div class="col bg-primary">
+        <img width="200" src="file:///Users/meggeejoseph/Desktop/IMG_1792.jpeg">
+    </div>
+
+    <div class="col bg-danger">
+      <img width="200" src="file:///Users/meggeejoseph/Desktop/IMG_2307.JPG">
+    </div>
+
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -10,13 +34,13 @@ TYPE html>
   <script type="application/javascript">
 
 
-  function calcBMI(){
-    w = weight.value  // read weight from element with id="weight"
-    h = height.value  // read height from element with id="height"
-    bmi = 703*w/(h*h)  // calculate the Body Mass Index
-    BMI.innerHTML =    // write into label element with id "BMI"
-        "You're BMI is "
-        +bmi.toFixed(1)  // round BMI to 1 decimal place
+  function calcMomentum(){
+    m = mass.value  // read mass from element with id="mass"
+    v = velocity.value  // read velocity from element with id="velocity"
+    momentum = (m*v)  // calculate the momentum Index
+    momentum.innerHTML =    // write into label element with id "momentum"
+        "The momentum is "
+        +momentum.toFixed(1)  // round momentum to 1 decimal place
 
 
   }
@@ -36,16 +60,67 @@ canvas.addEventListener('mousemove',mouseMove,false)
     console.dir(event)
     const x = event.offsetX
     const y = event.offsetY
-    //draw something here ...
-    ctx.fillRect(x,y,20,50)
+    ctx.moveto(90,50)
+    ctx.lineTo(96,141)
+    ctx.lineTo(101,162)
+    ctx.lineTo(112,170)
+    ctx.lineTo(123,174)
+    ctx.lineTo(120,180)
+    ctx.lineTo(105,182)
+    ctx.lineTo(101,188)
+    ctx.lineTo(98,197)
+    ctx.lineTo(92,218)
+    ctx.lineTo(121,221)
+    ctx.lineTo(139,199)
+    ctx.lineTo(166,192)
+    ctx.lineTo(256,247)
+    ctx.lineTo(339,189)
+    ctx.lineTo(292,180)
+    ctx.lineTo(352,155)
+    ctx.lineTo(242,103)
+    ctx.lineTo(165,151)
+    ctx.lineTo(154,151)
+    ctx.lineTo(140,151)
+    ctx.lineTo(132,144)
+    ctx.lineTo(107,127)
+    ctx.lineTo(93,125)
+    ctx.lineTo(94,145)
+    ctx.stroke()
+    ctx.fillRect(x,y,30,20)
   }
 
   function mouseMove(event){
     const x = event.offsetX
     const y = event.offsetY
-    // put your own code in here!
+
     if (event.buttons==1){ // only draw if they are pushing the button!
-        ctx.fillRect(x,y,10,20)
+        ctx.fillRect(x,y,50,50)
+        ctx.fillStyle="red"
+        ctx.lineTo(96,141)
+        ctx.lineTo(101,162)
+        ctx.lineTo(112,170)
+        ctx.lineTo(123,174)
+        ctx.lineTo(120,180)
+        ctx.lineTo(105,182)
+        ctx.lineTo(101,188)
+        ctx.lineTo(98,197)
+        ctx.lineTo(92,218)
+        ctx.lineTo(121,221)
+        ctx.lineTo(139,199)
+        ctx.lineTo(166,192)
+        ctx.lineTo(256,247)
+        ctx.lineTo(339,189)
+        ctx.lineTo(292,180)
+        ctx.lineTo(352,155)
+        ctx.lineTo(242,103)
+        ctx.lineTo(165,151)
+        ctx.lineTo(154,151)
+        ctx.lineTo(140,151)
+        ctx.lineTo(132,144)
+        ctx.lineTo(107,127)
+        ctx.lineTo(93,125)
+        ctx.lineTo(94,145)
+
     }
 }
 
@@ -78,49 +153,58 @@ canvas.addEventListener('mousemove',mouseMove,false)
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
   }
-  function drawTim(){
-    ctx.strokeStyle="blue"
+  function drawMeggee(){
+    ctx.strokeStyle="turquoise"
     ctx.lineWidth=5
     ctx.beginPath()
-    ctx.moveTo(96,399)
-    ctx.lineTo(195,398)
-    ctx.lineTo(398,401)
-    ctx.lineTo(400,198)
-    ctx.lineTo(299,299)
-    ctx.lineTo(199,199)
-    ctx.lineTo(102,295)
-    ctx.lineTo(36,203)
-    ctx.lineTo(44,396)
-    ctx.lineTo(43,399)
-    ctx.lineTo(91,396)
+
+    ctx.lineTo(96,141)
+    ctx.lineTo(101,162)
+    ctx.lineTo(112,170)
+    ctx.lineTo(123,174)
+    ctx.lineTo(120,180)
+    ctx.lineTo(105,182)
+    ctx.lineTo(101,188)
+    ctx.lineTo(98,197)
+    ctx.lineTo(92,218)
+    ctx.lineTo(121,221)
+    ctx.lineTo(139,199)
+    ctx.lineTo(166,192)
+    ctx.lineTo(256,247)
+    ctx.lineTo(339,189)
+    ctx.lineTo(292,180)
+    ctx.lineTo(352,155)
+    ctx.lineTo(242,103)
+    ctx.lineTo(165,151)
+    ctx.lineTo(154,151)
+    ctx.lineTo(140,151)
+    ctx.lineTo(132,144)
+    ctx.lineTo(107,127)
+    ctx.lineTo(93,125)
+    ctx.lineTo(94,145)
     ctx.stroke()
   }
 
   </script>
  </head>
  <body onload="init();">
-   <div class="container">
-     <div class="jumbotron">
-       <h1>Tim's Final Project .... </h1>
-       <p>This is a minimal demo </p>
-     </div>
+
 
    <div class="row">
      <div class="col">
-       <h1>Calculations</h1>
-       Put some textfields, labels, and buttons here ..
-       <h1>Body Mass Index</h1>
+       <h1>Momentum Calculator</h1>
+       Momentum is the quantity of motion of a moving body, measured as a product of its mass and velocity.
        What is your full name? <input type="text" id="fullName"><br>
-       Enter your weight in pounds <input type="number" id="weight"><br>
-       Enter your height in inches <input type="number" id="height"><br>
+       Enter the mass in grams <input type="number" id="mass"><br>
+       Enter the velocity in meter per second (m/s) <input type="number" id="velocity"><br>
        <button class="btn btn-lg btn-danger"
-               onClick="calcBMI()">
-           Calculate BMI
+               onClick="calcMomentum()">
+           Calculate Momentum
        </button>
        <br>
        <hr>
        <h2>Results</h2>
-       <label id="BMI">????</label>
+       <label id="momentum">????</label>
 
      </div>
      <div class="col">
@@ -130,11 +214,11 @@ canvas.addEventListener('mousemove',mouseMove,false)
 
      </div>
      <div class="col">
-       <h1>Buttons etc to draw on Canvas</h1>
+
        <button style="background:red; color:white"
                onclick="drawBackground()">Clear</button>
 
-       <br> <button onclick="drawTim()">Draw Tim</button>
+       <br> <button onclick="drawMeggee()">Draw Meggee</button>
        ....
      </div>
 
