@@ -100,7 +100,144 @@ Introduction:
 
           </table>
 
+          <meta charset="utf-8"/>
+          <script type="application/javascript">
 
+          let canvas=null  // we give this a value in the init method
+          let ctx=null
+
+          function init(){
+            // initialize canvas and ctx after the page is loaded
+            canvas = document.getElementById('canvas')
+            ctx = canvas.getContext('2d')
+            drawBackground()
+            canvas.addEventListener('click',mouseClick,false)
+            canvas.addEventListener('mousemove',mouseMove,false)
+          }
+
+          function mouseClick(event){
+            console.dir(event)
+            x = event.offsetX
+            y = event.offsetY
+            //
+            ctx.fillStyle="rgba(0,255,255,0.8)"
+            fillCircle(x,y,20)
+            ctx.fillStyle="rgba(50,255,255,0.8)"
+            fillCircle(x+20,y,20)
+            ctx.fillStyle="rgba(0,255,155,0.8)"
+            fillCircle(x-20,y,20)
+            drawStar(x,y)
+
+          }
+
+          function mouseMove(event){
+            //console.log(event.buttons)
+            ctx.fillStyle="rgba(0,255,255,0.3)"
+            const x = event.offsetX
+            const y = event.offsetY
+            if (event.buttons==1){  // see if the mouse button is pressed
+              ctx.fillRect(x,y,10,30)
+              ctx.fillStyle= "rgba(0,0,255,0.1)"
+              fillCircle(x,y,25)
+            }
+          }
+
+          function drawObject(x,y){
+            // put in your own code to draw something interesting
+            // at starting here ...
+            drawCircle(x,y,10)
+          }
+
+
+
+
+          function drawCircle(x,y,r){
+            // draw a circle centered at (x,y) with radius r
+            ctx.beginPath();
+            ctx.arc(x,y,r,0,2*Math.PI,true)
+            ctx.stroke()
+          }
+
+          function fillCircle(x,y,r){
+            // draw a circle centered at (x,y) with radius r
+            ctx.beginPath();
+            ctx.arc(x,y,r,0,2*Math.PI,true)
+            ctx.fill()
+          }
+
+          function drawStar(x,y){
+            console.log("drawing allissa's star")
+            ctx.strokestyle="blue"
+            ctx.lineWidth=8
+            ctx.beginPath()
+            ctx.moveTo(x+97,y+301)
+            ctx.lineTo(x+200,y+99)
+            ctx.lineTo(x+300,y+292)
+            ctx.lineTo(x+93,y+167)
+            ctx.lineTo(x+295,y+165)
+            ctx.lineTo(x+109,y+292)
+            ctx.lineTo(x+98,y+294)
+            ctx.stroke()
+            ctx.lineWidth=1
+
+
+          }
+
+          function drawBackground() {
+              console.log("drawing background")
+              ctx.clearRect(0,0,canvas.width,canvas.height)
+              ctx.strokeStyle="black"
+              ctx.fillStyle="black"
+              drawGrid(canvas,false)
+              drawGrid(canvas,true)
+          }
+
+
+          function drawGrid(major){
+            // if major is true this draws a thick grid every 100 pixels
+            // and labels the lines; otherwise it draws a light grid every
+            // 10 pixels
+            ctx.font = "10pt Georgia"
+            linewidth = major?5:1
+            increment = major?100:10
+            if (major){
+              ctx.strokeStyle = "rgb(0,0,0)"
+            } else {
+              ctx.strokeStyle = "rgb(200,200,200)"
+            }
+            ctx.beginPath();
+            for(let x = 0; x<=canvas.width; x=x+increment){
+              ctx.moveTo(x,0)
+              ctx.lineTo(x,canvas.height)
+              if (major) {ctx.fillText("x="+x,x,20)}
+            }
+            ctx.stroke()
+            ctx.beginPath();
+            for(let y = 0; y<=canvas.height; y=y+increment){
+              ctx.moveTo(0,y)
+              ctx.lineTo(canvas.width,y)
+              if (major) {ctx.fillText("y="+y,0,y+10)}
+            }
+            ctx.stroke()
+
+          }
+
+          </script>
+         </head>
+         <body onload="init();">
+           <h1>MouseDemo javascript canvas by OUEEN LISSA </h1>
+           <br>
+
+           <button onclick="drawBackground()">Clear</button>
+           <button onclick="drawTim(200,200)">Draw</button>
+
+           <canvas style="float:left;margin-right:30px"
+                   id="canvas" width="1500" height="1500">
+           </canvas>
+
+           <script src="drawgrid.js"></script>
+         </body>
+        </html>
 
 
 
