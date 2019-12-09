@@ -61,32 +61,6 @@ canvas.addEventListener('mousemove',mouseMove,false)
     console.dir(event)
     const x = event.offsetX
     const y = event.offsetY
-    ctx.moveTo(90,50)
-    ctx.lineTo(96,141)
-    ctx.lineTo(101,162)
-    ctx.lineTo(112,170)
-    ctx.lineTo(123,174)
-    ctx.lineTo(120,180)
-    ctx.lineTo(105,182)
-    ctx.lineTo(101,188)
-    ctx.lineTo(98,197)
-    ctx.lineTo(92,218)
-    ctx.lineTo(121,221)
-    ctx.lineTo(139,199)
-    ctx.lineTo(166,192)
-    ctx.lineTo(256,247)
-    ctx.lineTo(339,189)
-    ctx.lineTo(292,180)
-    ctx.lineTo(352,155)
-    ctx.lineTo(242,103)
-    ctx.lineTo(165,151)
-    ctx.lineTo(154,151)
-    ctx.lineTo(140,151)
-    ctx.lineTo(132,144)
-    ctx.lineTo(107,127)
-    ctx.lineTo(93,125)
-    ctx.lineTo(94,145)
-    ctx.stroke()
     ctx.fillRect(x,y,30,20)
   }
 
@@ -96,31 +70,8 @@ canvas.addEventListener('mousemove',mouseMove,false)
 
     if (event.buttons==1){ // only draw if they are pushing the button!
         ctx.fillRect(x,y,50,50)
-        ctx.fillStyle="red"
-        ctx.lineTo(96,141)
-        ctx.lineTo(101,162)
-        ctx.lineTo(112,170)
-        ctx.lineTo(123,174)
-        ctx.lineTo(120,180)
-        ctx.lineTo(105,182)
-        ctx.lineTo(101,188)
-        ctx.lineTo(98,197)
-        ctx.lineTo(92,218)
-        ctx.lineTo(121,221)
-        ctx.lineTo(139,199)
-        ctx.lineTo(166,192)
-        ctx.lineTo(256,247)
-        ctx.lineTo(339,189)
-        ctx.lineTo(292,180)
-        ctx.lineTo(352,155)
-        ctx.lineTo(242,103)
-        ctx.lineTo(165,151)
-        ctx.lineTo(154,151)
-        ctx.lineTo(140,151)
-        ctx.lineTo(132,144)
-        ctx.lineTo(107,127)
-        ctx.lineTo(93,125)
-        ctx.lineTo(94,145)
+        ctx.fillStyle="clear"
+        drawMeggee(x,y)
 
     }
 }
@@ -154,36 +105,36 @@ canvas.addEventListener('mousemove',mouseMove,false)
     ctx.arc(x,y,r,0,2*Math.PI,true)
     ctx.fill()
   }
-  function drawMeggee(){
-    ctx.strokeStyle="turquoise"
-    ctx.lineWidth=5
+  function drawMeggee(x,y){
+    ctx.strokeStyle="coral"
+    ctx.lineWidth=3
     ctx.beginPath()
-
-    ctx.lineTo(96,141)
-    ctx.lineTo(101,162)
-    ctx.lineTo(112,170)
-    ctx.lineTo(123,174)
-    ctx.lineTo(120,180)
-    ctx.lineTo(105,182)
-    ctx.lineTo(101,188)
-    ctx.lineTo(98,197)
-    ctx.lineTo(92,218)
-    ctx.lineTo(121,221)
-    ctx.lineTo(139,199)
-    ctx.lineTo(166,192)
-    ctx.lineTo(256,247)
-    ctx.lineTo(339,189)
-    ctx.lineTo(292,180)
-    ctx.lineTo(352,155)
-    ctx.lineTo(242,103)
-    ctx.lineTo(165,151)
-    ctx.lineTo(154,151)
-    ctx.lineTo(140,151)
-    ctx.lineTo(132,144)
-    ctx.lineTo(107,127)
-    ctx.lineTo(93,125)
-    ctx.lineTo(94,145)
+    ctx.moveTo(96-200+x,y-100+141)
+    ctx.lineTo(101-200+x,y-100+162)
+    ctx.lineTo(112-200+x,y-100+170)
+    ctx.lineTo(123-200+x,y-100+174)
+    ctx.lineTo(120-200+x,y-100+180)
+    ctx.lineTo(105-200+x,y-100+182)
+    ctx.lineTo(101-200+x,y-100+188)
+    ctx.lineTo(98-200+x,y-100+197)
+    ctx.lineTo(92-200+x,y-100+218)
+    ctx.lineTo(121-200+x,y-100+221)
+    ctx.lineTo(139-200+x,y-100+199)
+    ctx.lineTo(166-200+x,y-100+192)
+    ctx.lineTo(256-200+x,y-100+247)
+    ctx.lineTo(339-200+x,y-100+189)
+    ctx.lineTo(292-200+x,y-100+180)
+    ctx.lineTo(352-200+x,y-100+155)
+    ctx.lineTo(242-200+x,y-100+103)
+    ctx.lineTo(165-200+x,y-100+151)
+    ctx.lineTo(154-200+x,y-100+151)
+    ctx.lineTo(140-200+x,y-100+151)
+    ctx.lineTo(132-200+x,y-100+144)
+    ctx.lineTo(107-200+x,y-100+127)
+    ctx.lineTo(93-200+x,y-100+125)
+    ctx.lineTo(94-200+x,y-100+145)
     ctx.stroke()
+    ctx.Width=3
   }
 
   </script>
@@ -219,7 +170,7 @@ canvas.addEventListener('mousemove',mouseMove,false)
        <button style="background:red; color:white"
                onclick="drawBackground()">Clear</button>
 
-       <br> <button onclick="drawMeggee()">Draw Meggee</button>
+       <br> <button onclick="drawMeggee(200,100)">Draw Meggee</button>
        ....
      </div>
 
