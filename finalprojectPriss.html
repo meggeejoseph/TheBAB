@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script type="application/javascript">
+
+
+  function calcBPY(){
+    b = breath.value  // read weight from element with id="weight"
+    bpy = b*60*24*365  // calculate the Body Mass Index
+    BPY.innerHTML =    // write into label element with id "BMI"
+        "Your breath per year is "
+        +bpy.toFixed(1)  // round BMI to 1 decimal place
+
+
+  }
+  let canvas=null  // we give this a value in the init method
+  let ctx=null
+
+  function init(){
+    // initialize canvas and ctx after the page is loaded
+    canvas = document.getElementById('canvas')
+    ctx = canvas.getContext('2d')
+    drawBackground()
+    canvas.addEventListener('click',mouseClick,false)
+canvas.addEventListener('mousemove',mouseMove,false)
+  }
+
+  function mouseClick(event){
+    console.dir(event)
+    const x = event.offsetX
+    const y = event.offsetY
+    //draw something here ...
+    ctx.fillStyle(x,y,50,50)
+
+
+
+  }
+
+  function mouseMove(event){
+    const x = event.offsetX
+    const y = event.offsetY
+    // put your own code in here!
+    if (event.buttons==1){ // only draw if they are pushing the button!
+        ctx.fillRect(x,y,20,20)
+        ctx.fillStyle= "rgba(255,0,0,0.1)"
+        ctx.fillRect(x+20,y+20,30,40)
+        ctx.fillStyle="rgba(0,255,255,0.8)"
+        drawPriscilla(x,y)
+
+
+    }
+}
+
+  function drawCircle(x,y,r){
+    // draw a circle centered at (x,y) with radius r
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.stroke()
+  }
+
+  function drawCircles(){
+    let x = parseInt(xTF.value)
+    let y = parseInt(yTF.value)
+    let r = parseInt(rTF.value)
+    let n = parseInt(nTF.value)
+    let color = colorTF.value
+    for (let a = 0; a<n; a++){
+      drawCircle(x+10*a, y-10*a, 10+r*a)
+    }
+  }
+
+
+  function drawOneCircle(){
+    let x = parseInt(xTF.value)
+    let y = parseInt(yTF.value)
+    let r = parseInt(rTF.value)
+    let color = colorTF.value
+    ctx.fillStyle=color
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,2*Math.PI,true)
+    ctx.fill()
+  }
+  function drawPriscilla(x,y){
+    ctx.strokeStyle="red"
+    ctx.lineWidth=5
+    ctx.beginPath()
+    ctx.moveTo(150-200+x,y-200+140)
+    ctx.lineTo(198-200+x,y-200+200)
+    ctx.lineTo(241-200+x,y-200+140)
+    ctx.lineTo(290-200+x,y-200+200)
+    ctx.lineTo(199-200+x,y-200+303)
+    ctx.lineTo(110-200+x,y-200+200)
+    ctx.lineTo(152-200+x,y-200+140)
+    ctx.stroke()
+    ctx.Width=1
+  }
+
+  </script>
+ </head>
+ <body onload="init();">
+   <div class="container">
+     <div class="jumbotron">
+       <h1>Priscilla's Website</h1>
+       <p> </p>
+       <title>Priscilla's Bio Page</title>
+     </head>
+   Welcome to this corner of the internet that is about my life,
+   please enjoy a quick biography of who I have become from the
+   start of my life til now.
+   </p>
+     </div>
+     <h4>Quick Facts</h4>
+
+    <div class="row">
+      <div class="col bg-info">
+    <ul>
+    <li> I am addicted to chocolate </li>
+    <li> I can't swim </li>
+    <li> I like to meditate </li>
+    </ul>
+      </div>
+
+      <div class="col bg-info">
+    <ul>
+    <li> I don't have a favorite color </li>
+    <li> 4 is my lucky number </li>
+    <li> I'm Ghanaian </li>
+    <ul>
+      </ul></ul></div>
+    </div>
+
+
+     <h4> Biography</h4>
+
+     <div class="row">
+     <div class="col bg-info">
+
+         <p>
+         I was born on July 21 in the year 2001 (so my zodiac is cancer). I am the oldest sibling in my family
+     with two younger brothers and zero sisters. I've lived in Bronx, New York for 18 yrs.
+     I came to Brandeis University because the college is prestigious in STEM studies and I am in love with Massachusetts.
+     I'm currently majoring in biology and anticipate to attend medical school to become a pediatrician.
+         </p>
+     </div>
+
+     </div>
+     <div class="col">
+       <h5> Do you mediate? </h5>
+       <input type="checkbox" id="yes"> yes<br>
+       <input type="checkbox" id="no"> no<br>
+       <input type="checkbox" id="thinking about it"> thinking about it<br>
+       <h4>Breath Calculations</h4>
+
+       <p> As I said before I like meditating.
+        Part of meditation is being aware of your breathing.
+        Findout how much you breath per year <p>
+       How many times do you breath a minute <input type="number" id="breath"><br>
+       <button class="btn btn-lg btn-info"
+               onClick="calcBPY()">
+
+           Calculate BPY
+       </button>
+       <br>
+       <hr>
+       <h4>Results</h4>
+       <label id="BPY">????</label>
+     </div>
+   </div>
+
+     </div>
+       <div class="col">
+       <h4>Draw your hearts!!!! </h4>
+       <canvas style="float:left;margin-right:30px" id="canvas" width="500" height="500"></canvas>
+
+
+     </div>
+     <div class="col">
+       <h4>useful buttons </h4>
+       <button style="background:red; color:white"
+               onclick="drawBackground()">Erase</button>
+
+       <br> <button onclick="drawPriscilla(200,200)">Draw Pris</button>
+       ....
+     </div>
+
+ <!-- Optional JavaScript -->
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+   <script src="drawgrid.js"></script>
+  </div>
+ </body>
+</html>
