@@ -26,12 +26,12 @@
 
   function mouseMove(event){
     //console.log(event.buttons)
-  ctx.fillStyle="rgba(0,0,255,0.3)"
-  const x = event.offsetX
-  const y = event.offsetY
-  if (event.buttons==1){  // see if the mouse button is pressed
-  ctx.strokeStyle="blue"
-  ctx.lineWidth=5
+    ctx.fillStyle="rgba(0,0,255,0.3)"
+    const x = event.offsetX
+    const y = event.offsetY
+    if (event.buttons==1){  // see if the mouse button is pressed
+    ctx.fillRect(x,y,10,30)
+
     ctx.lineTo(115,103)
     ctx.lineTo(87,109)
     ctx.lineTo(90,129)
